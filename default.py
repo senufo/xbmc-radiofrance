@@ -33,6 +33,8 @@ listitem = xbmcgui.ListItem('FRANCE INFO')
 listitem.setInfo('audio', {'Title': 'France Info'})
 #xbmc.Player( xbmc.PLAYER_CORE_MPLAYER ).play('/tmp.fifo.ogg', listitem, True)
 xbmc.Player().play('/tmp/fifo.ogg', listitem, True)
+time.sleep(10)
+return_code = subprocess.Popen(['/home/henri/Sources/Video/xbmc/addons/github/plugin.audio.franceinfo/json.py'])
 #xbmc.Player().play('/tmp.fifo.ogg', listitem, True)
 #xbmc.Player().play('/tmp/fifo.ogg')
 print 'FIN FRANCEINFO'
