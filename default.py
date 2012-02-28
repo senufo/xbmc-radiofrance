@@ -25,7 +25,7 @@ return_code = subprocess.call([ffmpeg_cmd, ffmpeg_arg])
 return_code = subprocess.Popen(['/usr/bin/ffmpeg', '-y','-i',
                                'http://mp3.live.tv-radio.com/franceinfo/all/franceinfo.mp3',
                               '/tmp/fifo.ogg'])
-
+PID = '%s' % return_code.pid
 
 print "Return code 2 = %s " % return_code
 time.sleep(10)
@@ -34,7 +34,7 @@ listitem.setInfo('audio', {'Title': 'France Info'})
 #xbmc.Player( xbmc.PLAYER_CORE_MPLAYER ).play('/tmp.fifo.ogg', listitem, True)
 xbmc.Player().play('/tmp/fifo.ogg', listitem, True)
 time.sleep(10)
-return_code = subprocess.Popen(['/home/henri/Sources/Video/xbmc/addons/github/plugin.audio.franceinfo/json.py'])
+return_code = subprocess.Popen(['/home/henri/Sources/Video/xbmc/addons/github/plugin.audio.franceinfo/json.py',PID])
 #xbmc.Player().play('/tmp.fifo.ogg', listitem, True)
 #xbmc.Player().play('/tmp/fifo.ogg')
 print 'FIN FRANCEINFO'
