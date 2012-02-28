@@ -30,7 +30,11 @@ PID = '%s' % return_code.pid
 print "Return code 2 = %s " % return_code
 time.sleep(10)
 listitem = xbmcgui.ListItem('FRANCE INFO')
-listitem.setInfo('audio', {'Title': 'France Info'})
+listitem.setInfo('music', {'Title': 'France Info','genre': 'news'})
+listitem.setIconImage('icon.png')
+listitem.setThumbnailImage('/home/henri/Sources/Video/xbmc/addons/github/plugin.audio.franceinfo/icon.png')
+listitem.setProperty( "Fanart_Image",
+                     '/home/henri/Sources/Video/xbmc/addons/github/plugin.audio.franceinfo/fanart.jpg' )
 #xbmc.Player( xbmc.PLAYER_CORE_MPLAYER ).play('/tmp.fifo.ogg', listitem, True)
 xbmc.Player().play('/tmp/fifo.ogg', listitem, True)
 time.sleep(10)
