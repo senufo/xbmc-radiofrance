@@ -35,11 +35,8 @@ listitem.setThumbnailImage(
     '/home/henri/Sources/Video/xbmc/addons/github/plugin.audio.franceinfo/icon.png')
 listitem.setProperty( "Fanart_Image",
     '/home/henri/Sources/Video/xbmc/addons/github/plugin.audio.franceinfo/fanart.jpg' )
-#xbmc.Player( xbmc.PLAYER_CORE_MPLAYER ).play('/tmp.fifo.ogg', listitem, True)
 xbmc.Player().play('/tmp/fifo.ogg', listitem, True)
 time.sleep(10)
 objProcess = subprocess.Popen(
     ['/home/henri/Sources/Video/xbmc/addons/github/plugin.audio.franceinfo/json.py',PID])
-#xbmc.Player().play('/tmp.fifo.ogg', listitem, True)
-#xbmc.Player().play('/tmp/fifo.ogg')
 print 'FIN FRANCEINFO'
