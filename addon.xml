@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.audio.franceinfo"
-       name="France Info"
+<addon id="plugin.audio.radiofrance"
+       name="Radio France"
        version="0.1.1"
        provider-name="Senufo">
   <requires>
