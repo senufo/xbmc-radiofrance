@@ -11,7 +11,7 @@
         <provides>audio</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <platform>Linux</platform>
+    <platform>All</platform>
     <summary>Ecouter les radios de Radio France</summary>
     <description>Ecouter les radios de Radio France qui ne fonctionnement pas directement sous XBMC
             à cause du bug MP3codec error reading file.

@@ -8,7 +8,7 @@ Author : Senufo 2012 (c)
 import xbmcaddon, xbmcplugin, xbmcgui, xbmc
 import subprocess, time, sys, os
 
-__addonid__  = 'plugin.audio.franceinfo'
+__addonid__  = 'plugin.audio.radiofrance'
 __addon__ = xbmcaddon.Addon( __addonid__ )
 __addonDir__ = __addon__.getAddonInfo( "path" )
 __author__     = "Senufo"
