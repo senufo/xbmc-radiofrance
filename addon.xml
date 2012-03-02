@@ -11,7 +11,7 @@
         <provides>audio</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
+    <platform>Linux</platform>
     <summary>Ecouter France Info</summary>
     <description>Ecouter France Info</description>
   </extension>
