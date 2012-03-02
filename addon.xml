@@ -12,7 +12,14 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <platform>linux</platform>
-    <summary>Ecouter France Info</summary>
-    <description>Ecouter France Info</description>
+    <summary>Ecouter les radios de Radio France qui ne fonctionnement pas directement sous XBMC</summary>
+    <description>Ecouter les radios de Radio France qui ne fonctionnement pas directement sous XBMC
+à cause du bug MP3codec error reading file.
+Il faut définir dans la configuration du plugin l'adresse du flux que vous désirez et avoir ffmpeg
+ou vlc installé. 
+Attention il transcode le flux à la volée et l'écrit par défaut dans /tmp, il faut donc prévoir de 
+la place pour le fichier, environ 100 Mo/heure
+ 
+Par défaut il est configuré pour France Info.</description>
   </extension>
 </addon>
