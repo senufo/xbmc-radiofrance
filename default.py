@@ -22,19 +22,11 @@ __resource__   = xbmc.translatePath( os.path.join( __cwd__, 'resources'))
 sys.path.append (__resource__)
 
 url = __addon__.getSetting( 'url' )
-player = __addon__.getSetting( 'player' )
-if 'ffmpeg' in player:
-    objProcess = subprocess.Popen([player, '-y', '-i',
+objProcess = subprocess.Popen(['/usr/bin/ffmpeg', '-y', '-i',
                 url,
                 '/tmp/fifo.ogg'])
-elif 'vlc' in player:
-    objProcess = subprocess.Popen([player, '-I dummy', '-v', url,
-                       '--sout', 
-                       '#transcode{acodec=vorb}:standard{access=file,dst=/tmp/fifo.ogg,mux=ffmpeg}'
-                       ])
-
 PID = '%s' % objProcess.pid
-print "PID = %s" % PID
+
 time.sleep(5)
 listitem = xbmcgui.ListItem('FRANCE INFO')
 listitem.setInfo('music', {'Title': 'France Info', 'genre': 'news'})
