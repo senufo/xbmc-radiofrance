@@ -1,0 +1,5 @@
+Listen to Radio Radio France who do not work directly to XBMC due to bug MP3codec error reading file.
+Must be defined in the plugin configuration the feed address you want and have ffmpegor vlc installed.
+Warning it transcodes the stream on the fly and written by default in / tmp, it must plan for space for the file, about 100 MB / hour
+ 
+By default it is configured to France Info.
