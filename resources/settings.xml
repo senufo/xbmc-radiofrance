@@ -5,28 +5,33 @@
                 <setting id="debug" type= "bool" label ="Debug" default ="false" />
         </category>
         <category label= URLS>
-                <setting id="url1" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceinfo/all/franceinfo.mp3" />
                 <setting id="title1" type="text" label="Titre" default="France Info" />
+                <setting id="url1" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceinfo/all/franceinfo.mp3" />
                 <setting id="genre1" type="text" label="Genre" default="news" />
                 <setting id="logo1" type="text" label="Logo" default="france_info.png" />
-                <setting id="url2" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceinter/all/franceinterhautdebit.mp3" />
+                <setting type ="sep" />
                 <setting id="title2" type="text" label="Titre" default="France Inter" />
+                <setting id="url2" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceinter/all/franceinterhautdebit.mp3" />
                 <setting id="genre2" type="text" label="Genre" default="news" />
                 <setting id="logo2" type="text" label="Logo" default="france_inter.png" />
-                <setting id="url3" type="text" label="URL" default ="http://mp3.live.tv-radio.com/fip/all/fiphautdebit.mp3" />
+                <setting type ="sep" />
                 <setting id="title3" type="text" label="Titre" default="FIP" />
+                <setting id="url3" type="text" label="URL" default ="http://mp3.live.tv-radio.com/fip/all/fiphautdebit.mp3" />
                 <setting id="genre3" type="text" label="Genre" default="news" />
                 <setting id="logo3" type="text" label="Logo" default="fip.png" />
-                <setting id="url4" type="text" label="URL" default ="http://mp3.live.tv-radio.com/francemusique/all/francemusiquehautdebit.mp3" />
+                <setting type ="sep" />
                 <setting id="title4" type="text" label="Titre" default="France Musique" />
+                <setting id="url4" type="text" label="URL" default ="http://mp3.live.tv-radio.com/francemusique/all/francemusiquehautdebit.mp3" />
                 <setting id="genre4" type="text" label="Genre" default="news" />
                 <setting id="logo4" type="text" label="Logo" default="france_musique.png" />
-                <setting id="url5" type="text" label="URL" default ="http://mp3.live.tv-radio.com/rfimonde/all/rfimonde-64k.mp3" />
+                <setting type ="sep" />
                 <setting id="title5" type="text" label="Titre" default="RFI" />
+                <setting id="url5" type="text" label="URL" default ="http://mp3.live.tv-radio.com/rfimonde/all/rfimonde-64k.mp3" />
                 <setting id="genre5" type="text" label="Genre" default="news" />
                 <setting id="logo5" type="text" label="Logo" default="rfi.png" />
-                <setting id="url6" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceculture/all/franceculturehautdebit.mp3" />
+                <setting type ="sep" />
                 <setting id="title6" type="text" label="Titre" default="France Culture" />
+                <setting id="url6" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceculture/all/franceculturehautdebit.mp3" />
                 <setting id="genre6" type="text" label="Genre" default="news" />
                 <setting id="logo6" type="text" label="Logo" default="france_culture.png" />
     </category>
