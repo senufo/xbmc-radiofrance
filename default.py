@@ -42,23 +42,29 @@ def parameters_string_to_dict(parameters):
 def show_menu(path, racine='video'):
     ''' Show the plugin menu. '''
     #addFile('France Info', 'Info', 1, "icon.png")
-    listitem = xbmcgui.ListItem('FRANCE INFO')
-    listitem.setInfo('music', {'Title': 'France Info', 'genre': 'news', 'duration':
-                          0})
-    listitem.setIconImage('icon.png')
-    listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
-    url_2 = sys.argv[0] + '?title=' + 'France_Info'  + "&mode=" + '1'
+    list = ['', '1', '2']:
+    for index in list: 
+        url = __addon__.getSetting( 'url%s' % index )
+        title = __addon__.getSetting( 'title%s' % index )
+        sh vdr@enre = __addon__.getSetting( 'genre%s' % index )
+        
+        listitem = xbmcgui.ListItem('FRANCE INFO')
+        listitem.setInfo('music', {'Title': 'France Info', 'genre': 'news', 'duration':
+                              0})
+        listitem.setIconImage('icon.png')
+        listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
+            url_2 = sys.argv[0] + '?title=' + 'France_Info'  + "&mode=" + '1'
 
-    xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=url_2,
+        xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=url_2,
                                        listitem=listitem, isFolder=False)
 #   addFile('France Inter', 'Inter', 1, "icon.png")
-    listitem = xbmcgui.ListItem('FRANCE INTER')
-    listitem.setInfo('music', {'Title': 'France Inter', 'genre': 'news', 'duration':
-                          0})
-    listitem.setIconImage('icon.png')
-    listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
-    url_2 = sys.argv[0] + '?title=' + 'France_Inter' + '&url' + '' + "&mode=" + '1'
-    xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=url_2,
+    #listitem = xbmcgui.ListItem('FRANCE INTER')
+    #listitem.setInfo('music', {'Title': 'France Inter', 'genre': 'news', 'duration':
+    #                      0})
+    #listitem.setIconImage('icon.png')
+    #listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
+    #url_2 = sys.argv[0] + '?title=' + 'France_Inter' + '&url' + '' + "&mode=" + '1'
+        xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=url_2,
                                        listitem=listitem, isFolder=False)
     xbmcplugin.endOfDirectory(handle=int(handle), succeeded=True)
 
