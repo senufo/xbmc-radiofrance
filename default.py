@@ -42,17 +42,19 @@ def parameters_string_to_dict(parameters):
 def show_menu(path, racine='video'):
     ''' Show the plugin menu. '''
     #addFile('France Info', 'Info', 1, "icon.png")
-    list = ['', '1', '2']
+    list = ['1', '2', '3']
     for index in list: 
         url = __addon__.getSetting( 'url%s' % index )
         title = __addon__.getSetting( 'title%s' % index )
         genre = __addon__.getSetting( 'genre%s' % index )
-        
+        logo = __addon__.getSetting( 'logo%s' % index ) 
         listitem = xbmcgui.ListItem(title)
         listitem.setInfo('music', {'Title': title, 'genre': genre, 'duration':
                               0})
-        listitem.setIconImage('icon.png')
-        listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
+        print 'LOGO = %s ' % logo
+        listitem.setIconImage(logo)
+        #listitem.setIconImage('%s/media/%s' % (__resource__, logo))
+        listitem.setThumbnailImage('%s/media/%s' % (__resource__, logo))
         url_2 = sys.argv[0] + '?title=' + title  + '&url=' + url +  '&mode=' + '1'
 
         xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=url_2,
