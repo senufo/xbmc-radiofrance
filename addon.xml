@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.audio.radiofrance"
        name="Radio France"
-       version="0.1.1"
+       version="0.1.2"
        provider-name="Senufo">
   <requires>
     <import addon="xbmc.python" version="1.0"/>
@@ -13,13 +13,11 @@
   <extension point="xbmc.addon.metadata">
     <platform>linux</platform>
     <summary>Ecouter les radios de Radio France qui ne fonctionnement pas directement sous XBMC</summary>
-    <description>Ecouter les radios de Radio France qui ne fonctionnement pas directement sous XBMC
-à cause du bug MP3codec error reading file.
-Il faut définir dans la configuration du plugin l'adresse du flux que vous désirez et avoir ffmpeg
-ou vlc installé. 
-Attention il transcode le flux à la volée et l'écrit par défaut dans /tmp, il faut donc prévoir de 
-la place pour le fichier, environ 100 Mo/heure
- 
-Par défaut il est configuré pour France Info.</description>
+    <description>Ecouter les radios de Radio France qui ne fonctionnement pas directement sous XBMC cause du bug MP3codec error reading file.
+Il faut définir dans la configuration du plugin l'adresse du flux que vous désirez et avoir ffmpeg installé. 
+Attention il transcode le flux à la volée et l'écrit par défaut dans /tmp, il faut donc prévoir de la place pour le fichier, environ 100 Mo/heure
+Par défaut il est configuré pour France Info, France Musique, France Culture, RFI, FIP, France Inter.
+Vous pouvez personnaliser les urls dans la partie configuration du plugin
+    </description>
   </extension>
 </addon>
