@@ -1,9 +1,6 @@
 <?xml version ="1.0" encoding="utf-8" standalone=" yes"?>
 <settings>
         <category label= General>
-                <setting id="url" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceinfo/all/franceinfo.mp3" />
-                <setting id="title" type="text" label="Titre" default="France Info" />
-                <setting id="genre" type="text" label="Genre" default="news" />
                 <setting type ="sep" />
                 <setting id="debug" type= "bool" label ="Debug" default ="false" />
         </category>
