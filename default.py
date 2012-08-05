@@ -39,24 +39,26 @@ def parameters_string_to_dict(parameters):
     return paramDict
 
 # UI builder functions
-def show_menu(path, racine='video'):
+def show_menu():
     ''' Show the plugin menu. '''
-    for index in range(1,7): 
-        url = __addon__.getSetting( 'url%s' % index )
-        title = __addon__.getSetting( 'title%s' % index )
-        genre = __addon__.getSetting( 'genre%s' % index )
-        logo = __addon__.getSetting( 'logo%s' % index ) 
-        listitem = xbmcgui.ListItem(title)
-        listitem.setInfo('music', {'Title': title, 'genre': genre, 'duration':
-                              0})
-        print 'LOGO = %s ' % logo
-        listitem.setIconImage(logo)
-        #listitem.setIconImage('%s/media/%s' % (__resource__, logo))
-        listitem.setThumbnailImage('%s/media/%s' % (__resource__, logo))
-        url_2 = sys.argv[0] + '?title=' + title  + '&url=' + url +  '&mode=' + '1'
+    for index in range(1, 7): 
+        #Recup des url, titre et genre dans settings.xml
+        url_rf = __addon__.getSetting( 'url%s' % index )
+        title_rf = __addon__.getSetting( 'title%s' % index )
+        genre_rf = __addon__.getSetting( 'genre%s' % index )
+        logo_rf = __addon__.getSetting( 'logo%s' % index ) 
+        li = xbmcgui.ListItem(title_rf)
+        
+        li.setInfo('music', {'Title': title_rf, 'genre': genre_rf, 'duration':
+                                   0})
+        #On defini le logo (n'a pas l'air de fonctionner !!)
+        li.setIconImage(logo_rf)
+        li.setThumbnailImage('%s/media/%s' % (__resource__, logo_rf))
+        url_2 = sys.argv[0] + '?title=' + title_rf  + '&url=' + url_rf
+        url_2 += '&genre=' + genre_rf  + '&logo=' + logo_rf + '&mode=' + '1'
 
         xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=url_2,
-                                       listitem=listitem, isFolder=False)
+                                       listitem=li, isFolder=False)
     
     xbmcplugin.endOfDirectory(handle=int(handle), succeeded=True)
 
@@ -68,14 +70,14 @@ handle = sys.argv[1]
 
 if not sys.argv[2]:
     # new start
-    path = __addon__.getSetting('dir')
-    ok = show_menu(path)
+    show_menu()
 elif int(params['mode']) == MODE_FILE:
     listitem = xbmcgui.ListItem(params['title'])
     print "MODE FILE"
     url = params['url'] 
-    title = params['title'] 
-    #genre = params['genre'] 
+    title = params['title']
+    genre = params['genre']
+    logo = params['logo']
     objProcess = subprocess.Popen(['/usr/bin/ffmpeg', '-y', '-i',
                 url, 
                 '/tmp/fifo.ogg'])
@@ -85,8 +87,8 @@ elif int(params['mode']) == MODE_FILE:
     #listitem = xbmcgui.ListItem('FRANCE INFO')
     listitem.setInfo('music', {'Title': title, 'genre': 'news', 'duration':
                           0})
-    listitem.setIconImage('icon.png')
-    listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
+    listitem.setIconImage(logo)
+    listitem.setThumbnailImage('%s/media/%s' % (__resource__, logo))
     xbmc.Player().play('/tmp/fifo.ogg', listitem, True)
     time.sleep(10)
     objProcess = subprocess.Popen(['%s/lib/json.py' % __resource__, PID])
@@ -112,21 +114,3 @@ if ( __name__ == "__main__" ):
         xbmcplugin.endOfDirectory(int(sys.argv[1]))
     except:
         print "Erreur"
-
-#url = __addon__.getSetting( 'url' )
-#objProcess = subprocess.Popen(['/usr/bin/ffmpeg', '-y', '-i',
-#                url, 
-#                '/tmp/fifo.ogg'])
-#PID = '%s' % objProcess.pid
-
-#time.sleep(5)
-#listitem = xbmcgui.ListItem('FRANCE INFO')
-#listitem.setInfo('music', {'Title': 'France Info', 'genre': 'news', 'duration':
-#                          0})
-#listitem.setIconImage('icon.png')
-#listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
-#listitem.setProperty( "Fanart_Image", '%s/media/fanart.jpg' % __resource__)
-#listitem.setProperty("duration", '100')
-#xbmc.Player().play('/tmp/fifo.ogg', listitem, True)
-#time.sleep(10)
-#objProcess = subprocess.Popen(['%s/lib/json.py' % __resource__, PID])
