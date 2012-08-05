@@ -5,15 +5,18 @@
                 <setting id="debug" type= "bool" label ="Debug" default ="false" />
         </category>
         <category label= URLS>
-                <setting id="url" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceinfo/all/franceinfo.mp3" />
-                <setting id="title" type="text" label="Titre" default="France Info" />
-                <setting id="genre" type="text" label="Genre" default="news" />
-                <setting id="url1" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceinter/all/franceinterhautdebit.mp3" />
-                <setting id="title1" type="text" label="Titre" default="France Inter" />
+                <setting id="url1" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceinfo/all/franceinfo.mp3" />
+                <setting id="title1" type="text" label="Titre" default="France Info" />
                 <setting id="genre1" type="text" label="Genre" default="news" />
-                <setting id="url2" type="text" label="URL" default ="http://mp3.live.tv-radio.com/fip/all/fiphautdebit.mp3" />
-                <setting id="title2" type="text" label="Titre" default="FIP" />
+                <setting id="logo1" type="text" label="Logo" default="france_info.png" />
+                <setting id="url2" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceinter/all/franceinterhautdebit.mp3" />
+                <setting id="title2" type="text" label="Titre" default="France Inter" />
                 <setting id="genre2" type="text" label="Genre" default="news" />
+                <setting id="logo2" type="text" label="Logo" default="france_inter.png" />
+                <setting id="url3" type="text" label="URL" default ="http://mp3.live.tv-radio.com/fip/all/fiphautdebit.mp3" />
+                <setting id="title3" type="text" label="Titre" default="FIP" />
+                <setting id="genre3" type="text" label="Genre" default="news" />
+                <setting id="logo3" type="text" label="Logo" default="fip.png" />
      </category>
 </settings>
 
