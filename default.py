@@ -41,9 +41,7 @@ def parameters_string_to_dict(parameters):
 # UI builder functions
 def show_menu(path, racine='video'):
     ''' Show the plugin menu. '''
-    #addFile('France Info', 'Info', 1, "icon.png")
-    list = ['1', '2', '3']
-    for index in list: 
+    for index in range(1,7): 
         url = __addon__.getSetting( 'url%s' % index )
         title = __addon__.getSetting( 'title%s' % index )
         genre = __addon__.getSetting( 'genre%s' % index )

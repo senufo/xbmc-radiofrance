@@ -17,6 +17,18 @@
                 <setting id="title3" type="text" label="Titre" default="FIP" />
                 <setting id="genre3" type="text" label="Genre" default="news" />
                 <setting id="logo3" type="text" label="Logo" default="fip.png" />
-     </category>
+                <setting id="url4" type="text" label="URL" default ="http://mp3.live.tv-radio.com/francemusique/all/francemusiquehautdebit.mp3" />
+                <setting id="title4" type="text" label="Titre" default="France Musique" />
+                <setting id="genre4" type="text" label="Genre" default="news" />
+                <setting id="logo4" type="text" label="Logo" default="france_musique.png" />
+                <setting id="url5" type="text" label="URL" default ="http://mp3.live.tv-radio.com/rfimonde/all/rfimonde-64k.mp3" />
+                <setting id="title5" type="text" label="Titre" default="RFI" />
+                <setting id="genre5" type="text" label="Genre" default="news" />
+                <setting id="logo5" type="text" label="Logo" default="rfi.png" />
+                <setting id="url6" type="text" label="URL" default ="http://mp3.live.tv-radio.com/franceculture/all/franceculturehautdebit.mp3" />
+                <setting id="title6" type="text" label="Titre" default="France Culture" />
+                <setting id="genre6" type="text" label="Genre" default="news" />
+                <setting id="logo6" type="text" label="Logo" default="france_culture.png" />
+    </category>
 </settings>
 
