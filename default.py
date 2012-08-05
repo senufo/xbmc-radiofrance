@@ -42,30 +42,22 @@ def parameters_string_to_dict(parameters):
 def show_menu(path, racine='video'):
     ''' Show the plugin menu. '''
     #addFile('France Info', 'Info', 1, "icon.png")
-    list = ['', '1', '2']:
+    list = ['', '1', '2']
     for index in list: 
         url = __addon__.getSetting( 'url%s' % index )
         title = __addon__.getSetting( 'title%s' % index )
-        sh vdr@enre = __addon__.getSetting( 'genre%s' % index )
+        genre = __addon__.getSetting( 'genre%s' % index )
         
-        listitem = xbmcgui.ListItem('FRANCE INFO')
-        listitem.setInfo('music', {'Title': 'France Info', 'genre': 'news', 'duration':
+        listitem = xbmcgui.ListItem(title)
+        listitem.setInfo('music', {'Title': title, 'genre': genre, 'duration':
                               0})
         listitem.setIconImage('icon.png')
         listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
-            url_2 = sys.argv[0] + '?title=' + 'France_Info'  + "&mode=" + '1'
+        url_2 = sys.argv[0] + '?title=' + title  + '&url=' + url +  '&mode=' + '1'
 
         xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=url_2,
                                        listitem=listitem, isFolder=False)
-#   addFile('France Inter', 'Inter', 1, "icon.png")
-    #listitem = xbmcgui.ListItem('FRANCE INTER')
-    #listitem.setInfo('music', {'Title': 'France Inter', 'genre': 'news', 'duration':
-    #                      0})
-    #listitem.setIconImage('icon.png')
-    #listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
-    #url_2 = sys.argv[0] + '?title=' + 'France_Inter' + '&url' + '' + "&mode=" + '1'
-        xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=url_2,
-                                       listitem=listitem, isFolder=False)
+    
     xbmcplugin.endOfDirectory(handle=int(handle), succeeded=True)
 
 
@@ -81,7 +73,9 @@ if not sys.argv[2]:
 elif int(params['mode']) == MODE_FILE:
     listitem = xbmcgui.ListItem(params['title'])
     print "MODE FILE"
-    url = __addon__.getSetting( 'url' )
+    url = params['url'] 
+    title = params['title'] 
+    #genre = params['genre'] 
     objProcess = subprocess.Popen(['/usr/bin/ffmpeg', '-y', '-i',
                 url, 
                 '/tmp/fifo.ogg'])
@@ -89,7 +83,7 @@ elif int(params['mode']) == MODE_FILE:
 
     time.sleep(5)
     #listitem = xbmcgui.ListItem('FRANCE INFO')
-    listitem.setInfo('music', {'Title': 'France Info', 'genre': 'news', 'duration':
+    listitem.setInfo('music', {'Title': title, 'genre': 'news', 'duration':
                           0})
     listitem.setIconImage('icon.png')
     listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
