@@ -23,16 +23,18 @@ sys.path.append (__resource__)
 
 url = __addon__.getSetting( 'url' )
 objProcess = subprocess.Popen(['/usr/bin/ffmpeg', '-y', '-i',
-                url,
+                url, 
                 '/tmp/fifo.ogg'])
 PID = '%s' % objProcess.pid
 
 time.sleep(5)
 listitem = xbmcgui.ListItem('FRANCE INFO')
-listitem.setInfo('music', {'Title': 'France Info', 'genre': 'news'})
+listitem.setInfo('music', {'Title': 'France Info', 'genre': 'news', 'duration':
+                          0})
 listitem.setIconImage('icon.png')
 listitem.setThumbnailImage('%s/media/icon.png' % __resource__)
-listitem.setProperty( "Fanart_Image", '%s/media/fanart.jpg' % __resource__)
+#listitem.setProperty( "Fanart_Image", '%s/media/fanart.jpg' % __resource__)
+#listitem.setProperty("duration", '100')
 xbmc.Player().play('/tmp/fifo.ogg', listitem, True)
 time.sleep(10)
 objProcess = subprocess.Popen(['%s/lib/json.py' % __resource__, PID])
